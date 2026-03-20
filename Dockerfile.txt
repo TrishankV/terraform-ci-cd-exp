@@ -1,0 +1,13 @@
+FROM python:3.10 
+
+WORKDIR /the/workdir/path
+
+COPY requirements.txt /the/workdir/path/
+
+RUN pip install -r requirements.txt 
+
+COPY . . 
+
+EXPOSE 55000
+
+CMD ["python" , "app.py"]
